@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Jay_Test>
+			<version>1.0.1</version>
+		</Jay_Test>
+	</modules>
+	<global>
+		<helpers>
+			<jay_test>
+				<class>Jay_Test_Helper</class>
+			</jay_test>
+		</helpers>
+		<blocks>
+			<jay_test><!-- this is an alias -->
+				<class>Jay_Test_Block</class>
+				<name>Jay Test</name>
+			</jay_test>
+		</blocks>
+	</global>
+	<frontend>
+		<routers>
+			<jay_test>
+				<use>standard</use>
+				<args>
+					<module>Jay_Test</module>
+					<frontName>jaytest</frontName>
+				</args>
+			</jay_test>
+		</routers>
+		<layout>
+			<updates>
+				<jay_test> <!-- alias -->
+					<file>jay_test.xml</file>
+				</jay_test>
+			</updates>
+		</layout>
+	</frontend>
+</config>

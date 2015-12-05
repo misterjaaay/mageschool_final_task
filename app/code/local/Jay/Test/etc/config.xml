@@ -6,6 +6,13 @@
 		</Jay_Test>
 	</modules>
 	<global>
+		<resources>
+			<jay_test_setup>
+				<setup>
+					<module>Jay_Test</module>
+				</setup>
+			</jay_test_setup>
+		</resources>
 		<helpers>
 			<jay_test>
 				<class>Jay_Test_Helper</class>
@@ -17,6 +24,20 @@
 				<name>Jay Test</name>
 			</jay_test>
 		</blocks>
+		<models>
+			<jay_test>
+				<class>Jay_Test_Model</class>
+				<resourceModel>jay_test_resource</resourceModel>
+			</jay_test>
+			<jay_test_resource>
+				<class>Jay_Test_Model_Resource</class>
+				<entities>
+					<mytest>
+						<table>jay_test_mytest</table>
+					</mytest>
+				</entities>
+			</jay_test_resource>
+		</models>
 	</global>
 	<frontend>
 		<routers>
@@ -30,10 +51,21 @@
 		</routers>
 		<layout>
 			<updates>
-				<jay_test> <!-- alias -->
+				<jay_test>
 					<file>jay_test.xml</file>
 				</jay_test>
 			</updates>
 		</layout>
 	</frontend>
+	<admin>
+		<routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<jay_test before="Mage_Adminhtml">Jay_Test_Adminhtml</jay_test>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+	</admin>
 </config>
